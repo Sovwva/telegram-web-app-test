@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Web App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    // Инициализация Telegram Web App
+    const tg = window.Telegram.WebApp;
+    tg.expand(); // Расширяем приложение на весь экран
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Отправка данных в консоль при взаимодействии с Telegram Web App
+      console.log('Web App Initialized:', tg.initDataUnsafe);
+    });
+
+    // Пример взаимодействия с Telegram Web App
+    function sendMessage() {
+      tg.sendData('Hello from Web App');
+    }
+  </script>
+</head>
+<body>
+  <h1>Telegram Web App</h1>
+  <button onclick="sendMessage()">Send Message</button>
+</body>
+</html>
